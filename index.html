@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de projetos em robótica educacional, programação e inclusão digital desenvolvidos por Gabriel.">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos para garantir que os vídeos fiquem responsivos */
+        .videos-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .video-item {
+            width: 100%;
+            max-width: 560px; /* Limita a largura máxima */
+            text-align: center;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-item iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+        }
+
+        /* Estilo para a área de descrição */
+        .descricao {
+            font-size: 1rem;
+            color: #333;
+            padding: 15px;
+            background-color: #fff;
+        }
+
+        .video-item h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        /* Botões e links do site */
+        .btn-secondary {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #0056b3;
+        }
+
+        /* Ajuste para dispositivos menores */
+        @media (max-width: 768px) {
+            .videos-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .video-item {
+                max-width: 100%; /* Vai usar a largura total em dispositivos menores */
+            }
+        }
+    </style>
+</head>
+
+<body id="topo">
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Vamos explorar alguns projetos desenvolvidos!</h1>
+        <p class="subtitle">Educador Gabriel</p>
+
+        <nav aria-label="Navegação principal">
+            <a href="#sobre">Sobre</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Sobre -->
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <p class="sobre-texto">
+                Me chamo Gabriel, desenvolvo e aplico encontros focados em robótica educacional,
+                programação e inclusão digital, com o objetivo de ampliar o acesso à tecnologia
+                e estimular o pensamento lógico e criativo.
+            </p>
+        </section>
+
+        <!-- Projetos -->
+        <section id="projetos">
+            <h2>Projetos Desenvolvidos</h2>
+
+            <div class="videos-container">
+
+                <article class="video-item">
+                    <iframe src="https://www.youtube.com/embed/9_LHBSIabOs" 
+                        title="Estacionamento inteligente" 
+                        frameborder="0" allowfullscreen>
+                    </iframe>
+                    <h3>Estacionamento inteligente</h3>
+                    <p class="descricao">
+                        Neste vídeo, mostramos um estacionamento inteligente onde o carro estaciona sozinho
+                        utilizando sensores ultrassônicos e um seguidor de linha, demonstrando automação
+                        e robótica em ação.
+                    </p>
+                </article>
+
+                <article class="video-item">
+                    <iframe src="https://www.youtube.com/embed/YXf0qHwK5Qc" 
+                        title="Horta inteligente" 
+                        frameborder="0" allowfullscreen>
+                    </iframe>
+                    <h3>Horta inteligente</h3>
+                    <p class="descricao">
+                        O microcontrolador monitora o nível de umidade do solo e, quando está baixo,
+                        aciona um servo motor para irrigar automaticamente.
+                    </p>
+                </article>
+
+                <article class="video-item">
+                    <iframe src="https://www.youtube.com/embed/7KcanOIbGJU" 
+                        title="Ventilador com monitoramento de temperatura" 
+                        frameborder="0" allowfullscreen>
+                    </iframe>
+                    <h3>Ventilador com monitoramento de temperatura</h3>
+                    <p class="descricao">
+                        Este sistema utiliza um microcontrolador para monitorar a temperatura do ambiente,
+                        permitindo que o usuário acione dispositivos de forma consciente e eficiente.
+                    </p>
+                </article>
+
+                <article class="video-item">
+                    <iframe src="https://www.youtube.com/embed/O2R9020_KKE" 
+                        title="Outros projetos" 
+                        frameborder="0" allowfullscreen>
+                    </iframe>
+                    <h3>Outros projetos</h3>
+                    <p class="descricao">
+                        Projetos desenvolvidos durante a capacitação, aplicando conhecimentos práticos
+                        para as aulas de robótica.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Email: Educador.gabriel20@gmail.com</p>
+            <p>Telefone: (43) 99904-8590</p>
+
+            <a href="#topo" class="btn-secondary">Voltar ao topo</a>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Gabriel Vinicius Pereira. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

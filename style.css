@@ -1,0 +1,157 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Corpo */
+body {
+    background-color: #1E1E2F;
+    color: #E0E0E0;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #3F51B5;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+header nav a {
+    color: #E0E0E0;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #FF4081;
+    text-decoration: underline;
+}
+
+/* Seções */
+section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Container da grade de vídeos */
+.videos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* Garante que o vídeo nunca fique muito pequeno */
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Cada item da grade */
+.video-item {
+    background-color: #2A2A40;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 64, 129, 0.2); /* Cor da sombra original */
+    text-align: center;
+    color: #E0E0E0;
+    position: relative;
+    overflow: hidden; /* Garante que os vídeos não ultrapassem os limites do contêiner */
+    border: 2px solid #3F51B5; /* Moldura com a cor original */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação ao clicar */
+}
+
+/* Animação ao clicar */
+.video-item:active {
+    transform: scale(1.05); /* Efeito de zoom ao clicar */
+    box-shadow: 0 6px 12px rgba(255, 64, 129, 0.4); /* Efeito de sombra ao clicar */
+}
+
+/* Embeds de vídeos do YouTube (16:9) */
+.video-item iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: #000;
+    position: relative;
+    display: block; /* Garante que o iframe se comporte corretamente */
+    aspect-ratio: 16/9; /* Nova abordagem para manter a proporção */
+}
+
+/* Títulos */
+h2, h3 {
+    color: #FFFFFF; /* Títulos agora em branco */
+    font-size: 1.6rem; /* Tamanho ajustado */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Sombra no texto para melhorar a legibilidade */
+}
+
+/* Descrição (ajustada para cor preta) */
+.video-item .descricao {
+    color: #000000; /* Cor preta para a descrição */
+    margin-top: 8px;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); /* Sombra no texto para legibilidade */
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111222;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Botão "Voltar ao topo" */
+.btn-secondary {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 26px;
+    border-radius: 30px;
+    border: 2px solid #FF4081;
+    color: #FF4081;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #FF4081;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.9rem;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    /* Ajustar o grid de vídeos para telas pequenas */
+    .videos-container {
+        grid-template-columns: 1fr; /* Apenas uma coluna para telas pequenas */
+        gap: 15px; /* Ajusta o espaço entre os vídeos */
+    }
+
+    /* Ajuste no iframe para se encaixar em telas menores */
+    .video-item iframe {
+        padding-bottom: 56.25%; /* Mantém a proporção 16:9 */
+        aspect-ratio: 16/9; /* Mantém a proporção corretamente */
+    }
+
+    h2, h3 {
+        font-size: 1.3rem; /* Ajusta o tamanho do título */
+    }
+
+    .btn-secondary {
+        padding: 10px 20px; /* Botão um pouco menor */
+        font-size: 0.9rem; /* Tamanho ajustado do texto */
+    }
+}
