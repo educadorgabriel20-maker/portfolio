@@ -1,0 +1,319 @@
+/* =========================
+   RESET & VARIÁVEIS
+========================= */
+:root {
+    --bg-main: #1E1E2F;
+    --bg-card: #2A2A40;
+    --bg-footer: #111222;
+    --primary: #3F51B5;
+    --accent: #FF4081;
+    --text-main: #E0E0E0;
+    --text-muted: #BDBDBD;
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 12px 24px rgba(255, 64, 129, 0.35);
+    --radius: 12px;
+    --transition: 0.35s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    background: linear-gradient(180deg, #1E1E2F, #161625);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+    background: linear-gradient(135deg, var(--primary), #5C6BC0);
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+}
+
+header h1 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #EDEDED;
+    opacity: 0.9;
+}
+
+/* =========================
+   NAV
+========================= */
+header nav {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+header nav a {
+    color: #EDEDED;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 5px;
+    transition: var(--transition);
+}
+
+header nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--accent);
+    transition: var(--transition);
+}
+
+header nav a:hover {
+    color: #fff;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+section p {
+    color: var(--text-muted);
+}
+
+/* =========================
+   VIDEOS GRID
+========================= */
+.videos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 35px;
+}
+
+/* =========================
+   VIDEO CARD
+========================= */
+.video-item {
+    background: linear-gradient(160deg, var(--bg-card), #232336);
+    padding: 18px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.video-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 64, 129, 0.15),
+        transparent
+    );
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.video-item:hover::before {
+    opacity: 1;
+}
+
+.video-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+}
+
+/* =========================
+   VIDEO
+========================= */
+.video-item video {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #000;
+}
+
+/* =========================
+   TITLES & DESCRIPTION
+========================= */
+.video-item h3 {
+    margin-top: 12px;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.video-item .descricao {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    text-align: center;
+    padding: 25px 15px;
+    background-color: var(--bg-footer);
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+/* =========================
+   ACESSIBILIDADE
+========================= */
+a:focus,
+button:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+/* =========================
+   MOBILE ADJUSTMENTS
+========================= */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.9rem;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+}
+/* =========================
+   BOTÕES
+========================= */
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #ff5c93;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+/* =========================
+   BOTÃO TEMA
+========================= */
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* =========================
+   TEMA CLARO
+========================= */
+html[data-theme="light"] {
+    --bg-main: #F4F6FB;
+    --bg-card: #FFFFFF;
+    --bg-footer: #EDEDED;
+    --text-main: #222;
+    --text-muted: #555;
+}
+/* =========================
+   TIPOGRAFIA MELHORADA
+========================= */
+
+/* Educador Gabriel */
+.subtitle {
+    font-size: 1.3rem;
+    margin-top: 8px;
+    font-weight: 500;
+    opacity: 0.95;
+}
+
+/* Texto Sobre Mim */
+.sobre-texto {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-top: 15px;
+    max-width: 800px;
+}
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+.btn-secondary {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 26px;
+    border-radius: 30px;
+    border: 2px solid #FF4081;
+    color: #FF4081;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #FF4081;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   SCROLL SUAVE
+========================= */
+html {
+    scroll-behavior: smooth;
+}
